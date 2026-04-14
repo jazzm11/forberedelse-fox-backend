@@ -19,10 +19,15 @@ PORT=5000
 FOX_API_URL=https://randomfox.ca/floof/
 MONGODB_URL=mongodb://localhost:27017/foxdb
 
-node app.js
+npm start
+
+## 🌐 Visit the API at
+http://localhost:5000/api/fox/
+
 📡 API Routes
+
 🗳️ Vote for a fox
-POST /fox/vote
+POST /api/fox/vote
 
 Body:
 
@@ -30,8 +35,9 @@ Body:
   "winnerUrl": "image_url",
   "loserUrl": "image_url"
 }
+
 📊 Get statistics
-GET /fox/stats
+GET /api/fox/stats
 
 Response:
 
@@ -43,6 +49,16 @@ Response:
     }
   ]
 }
+
+🦊 Get random fox
+GET /api/fox/
+
+Response:
+{
+  "fox1": "https://randomfox.ca/images/92.jpg",
+  "fox2": "https://randomfox.ca/images/13.jpg"
+}
+
 🧠 How it works
 Receives vote request
 Updates winner fox votes in MongoDB
